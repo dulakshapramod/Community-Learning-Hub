@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Community Learning Hub - Profile Customizer</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9fafb;
+}
+form {
+  background: white;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #e5e7eb;
+}
+h1 {
+  font-size: 20px;
+  color: #1e3a8a;
+  margin-top: 0;
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+input[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+</style>
+<script>
+function saveToLocalStorage() {
+const username = document.getElementById('username').value;
+localStorage.setItem('username', username);
+alert('Data saved to local storage');
+}
+window.onload = function() {
+const storedUsername = localStorage.getItem('username');
+if (storedUsername) {
+document.getElementById('username').value = storedUsername;}
+};
+</script>
+</head>
+<body>
+<form onsubmit="saveToLocalStorage(); return false;">
+<h1>Community Learning Hub - Profile Customizer</h1>
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+<input type="submit" value="Save">
+</form>
+</body>
+</html>
